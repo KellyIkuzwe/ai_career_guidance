@@ -1,0 +1,25 @@
+{
+  "short_name": "AI Career Guidance",
+  "name": "AI Career Guidance Platform",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/images/photo1754988990.jpg",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/photo1754988990.jpg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#4a6fdc",
+  "background_color": "#ffffff"
+}
