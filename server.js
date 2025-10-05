@@ -12,15 +12,19 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret: 'ai-career-guidance-secret',
+  secret: process.env.SESSION_SECRET || 'ai-career-guidance-secret',
   resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false } // set to true if using https
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax'
+  }
 }));
 
 // MongoDB Connection
@@ -45,12 +49,12 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Define routes
-// Import route modules
-const userRoutes = require('./routes/userRoutes');
-const jobRoutes = require('./routes/jobRoutes');
-const profileRoutes = require('./routes/profileRoutes');
-const applicationRoutes = require('./routes/applicationRoutes');
-const aiRoutes = require('./routes/aiRoutes');
+// Import route modules (adjusted to actual file locations)
+const userRoutes = require('./userRoutes');
+const jobRoutes = require('./jobRoutes');
+const profileRoutes = require('./profileRoutes');
+const applicationRoutes = require('./applicationRoutes');
+const aiRoutes = require('./aiRoutes');
 
 // Use route modules
 app.use('/api/users', userRoutes);

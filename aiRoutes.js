@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const AIMatch = require('../models/AIMatch');
-const Profile = require('../models/Profile');
-const Job = require('../models/Job');
+// Adjusted to actual file locations
+const AIMatch = require('./AIMatch');
+const Profile = require('./Profile');
+const Job = require('./Job');
 
 // Middleware to check if user is authenticated
 const auth = (req, res, next) => {

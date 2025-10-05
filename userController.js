@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
-const User = require('../../models/User');
+// Adjusted to actual file location
+const User = require('./User');
 
 /**
  * Register a new user

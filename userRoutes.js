@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const userController = require('../controllers/auth/userController');
+// Adjusted to actual file location
+const userController = require('./userController');
 
 // @route   POST api/users/register
 // @desc    Register a new user

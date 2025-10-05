@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Job = require('../models/Job');
+// Adjusted to actual file location
+const Job = require('./Job');
 
 // Middleware to check if user is authenticated
 const auth = (req, res, next) => {

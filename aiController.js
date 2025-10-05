@@ -1,7 +1,8 @@
-const AIMatch = require('../../models/AIMatch');
-const Profile = require('../../models/Profile');
-const Job = require('../../models/Job');
-const User = require('../../models/User');
+// Adjusted to actual file locations
+const AIMatch = require('./AIMatch');
+const Profile = require('./Profile');
+const Job = require('./Job');
+const User = require('./User');
 
 /**
  * Get AI job matches for current user
