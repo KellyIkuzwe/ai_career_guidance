@@ -1,5 +1,6 @@
-const Job = require('../../models/Job');
-const User = require('../../models/User');
+// Adjusted to actual file locations
+const Job = require('./Job');
+const User = require('./User');
 
 /**
  * Create a new job

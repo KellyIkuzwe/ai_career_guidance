@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const Application = require('../models/Application');
-const Job = require('../models/Job');
+// Adjusted to actual file locations
+const Application = require('./Application');
+const Job = require('./Job');
 
 // File upload configuration for CVs
 const storage = multer.diskStorage({

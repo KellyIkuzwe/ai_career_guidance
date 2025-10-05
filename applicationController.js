@@ -1,6 +1,7 @@
-const Application = require('../../models/Application');
-const Job = require('../../models/Job');
-const User = require('../../models/User');
+// Adjusted to actual file locations
+const Application = require('./Application');
+const Job = require('./Job');
+const User = require('./User');
 
 /**
  * Submit a job application

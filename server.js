@@ -45,12 +45,12 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Define routes
-// Import route modules
-const userRoutes = require('./routes/userRoutes');
-const jobRoutes = require('./routes/jobRoutes');
-const profileRoutes = require('./routes/profileRoutes');
-const applicationRoutes = require('./routes/applicationRoutes');
-const aiRoutes = require('./routes/aiRoutes');
+// Import route modules (adjusted to actual file locations)
+const userRoutes = require('./userRoutes');
+const jobRoutes = require('./jobRoutes');
+const profileRoutes = require('./profileRoutes');
+const applicationRoutes = require('./applicationRoutes');
+const aiRoutes = require('./aiRoutes');
 
 // Use route modules
 app.use('/api/users', userRoutes);
