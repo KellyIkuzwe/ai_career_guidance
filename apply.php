@@ -1,10 +1,10 @@
 <?php
 session_start();
 if(!isset($_SESSION['cg_user_token'])){
-    header("Location: ../login?error=login");
+    header("Location: login?error=login");
     exit();
 }
-include('../connector.php');
+include('connector.php');
 $queryUser = mysqli_query($connect, "SELECT * FROM User WHERE id='".$_SESSION['cg_user_token']."'");
 $rowUser = mysqli_fetch_array($queryUser);
 

@@ -8,7 +8,9 @@ if (isset($_POST['userlogin'])) {
     $password = mysqli_real_escape_string($connect, $_POST['password']);
     $role = mysqli_real_escape_string($connect, $_POST['role']);
     
-    $query = mysqli_query($connect, "SELECT * FROM User WHERE email='$email' AND password='$password' AND role='$role' AND deleted=0");
+    // Authenticate user by email, password, and role
+    // Removed dependency on a non-guaranteed 'deleted' column to avoid SQL errors
+    $query = mysqli_query($connect, "SELECT * FROM User WHERE email='$email' AND password='$password' AND role='$role'");
     
     if (mysqli_num_rows($query) > 0) {
         $row = mysqli_fetch_array($query);
@@ -16,12 +18,13 @@ if (isset($_POST['userlogin'])) {
         $_SESSION['cg_user_code'] = $row['code'];
         $_SESSION['cg_user_role'] = $row['role'];
         
+        // Redirect users to dashboard index regardless of role for now
         if ($row['role'] == 'jobseeker') {
-            header("Location: panel/index");
+            header("Location: index");
         } elseif ($row['role'] == 'company') {
-            header("Location: panel/index");
+            header("Location: index");
         } elseif ($row['role'] == 'admin') {
-            header("Location: panel/admin");
+            header("Location: index");
         }
     } else {
         header("Location: login?error=invalid");

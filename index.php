@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['cg_user_token'])){
-    header("Location: ../login?error=login");
+    header("Location: login?error=login");
     exit();
 }
 ?>
